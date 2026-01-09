@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { AppText } from "@/components/AppText";
 import { Link, useRouter } from "expo-router";
 import { Button } from "@/components/Button";
-
+import { Shop } from "@/components/Shop";
 export default function IndexScreen() {
   const router = useRouter();
   return (
@@ -51,7 +51,6 @@ export default function IndexScreen() {
       <AppText center>
         <AppText bold size="large">بِسْمِ ٱللهِ</AppText> 
       </AppText>
-
     </View>
   );
 }
