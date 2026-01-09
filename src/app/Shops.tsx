@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import { AppText } from "@/components/AppText";
 import { Shop } from "@/components/Shop";
+import ShopInput from "@/components/ShopInput";
 
 
 export default function ShopScreen() {
@@ -12,8 +13,8 @@ export default function ShopScreen() {
       <AppText center>
         <AppText bold>Try adding some below.</AppText> 
       </AppText>
-             <Shop name={"Aldi"} distance={2} items={15} address={"23 Chester road"} postcode={"b23 5ds"} rating={5} notes={"Good for cheap products"} time={1} />
-
+      <ShopInput />
+    
     </View>
   );
 }

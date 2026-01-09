@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 
 
-
+// A shop that the user has visited frequently
 
 
 

@@ -51,6 +51,7 @@ export default function IndexScreen() {
       <AppText center>
         <AppText bold size="large">بِسْمِ ٱللهِ</AppText> 
       </AppText>
+      
     </View>
   );
 }
