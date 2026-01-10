@@ -1,17 +1,22 @@
-import { TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet, Alert, Text } from "react-native";
 import { AppText } from "@/components/AppText";
 import React from "react";
 
 // This is the component that the user enters their shops into
 export default function ShopInput() {
     const [text, onChangeText] = React.useState('');
+    const [shopCount, setShopCount] = React.useState(0);
   return (
     <View>
-     
+        <Text>You currently have {shopCount} shops.</Text>
         <TextInput 
-        value = {text}
         placeholder="Enter your shop here"
-        onChangeText={onChangeText}
+        onSubmitEditing={event => {
+            setShopCount(shopCount => shopCount +1);
+
+
+            Alert.alert("Added shop " + event.nativeEvent.text + " to the app.");
+        }}
         style={styles.input}
         />
     </View>
