@@ -8,8 +8,6 @@ export default function ShopScreen() {
   const shopCount = 0;
   return (
     <View className="p-10 m-10">
-      <Text className="text-center">You currently have {shopCount} shops.</Text>
-      <Text className="text-center p-2">Try adding some below!</Text>
       <ShopInput />
 
     </View>

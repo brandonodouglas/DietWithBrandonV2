@@ -6,29 +6,44 @@ import React from "react";
 export default function ShopInput() {
     const [text, onChangeText] = React.useState('');
     const [shopCount, setShopCount] = React.useState(0);
-  return (
-    <View>
-        <Text>You currently have {shopCount} shops.</Text>
-        <TextInput 
-        placeholder="Enter your shop here"
-        onSubmitEditing={event => {
-            setShopCount(shopCount => shopCount +1);
+    if (shopCount == 0) {
+        return (
+            <View>
+                <Text className="text-center p-2"> You currently have {shopCount} shops.</Text>
+                <Text className="text-center p-2"> How about adding some below?</Text>
+                <TextInput
+                placeholder="Enter shop here"
+                onSubmitEditing={event => {
+                    setShopCount(shopCount => shopCount + 1);
+                    Alert.alert("Added shop " + event.nativeEvent.text + " to the app.");
+                }}
+                style={styles.input}
+            />
+            </View>
+        );
+    }
+    return (
+        <View>
 
-
-            Alert.alert("Added shop " + event.nativeEvent.text + " to the app.");
-        }}
-        style={styles.input}
-        />
-    </View>
-  );
+            <Text className="text-center p-2">You currently have {shopCount} shops.</Text>
+            <TextInput
+                placeholder="Enter shop here"
+                onSubmitEditing={event => {
+                    setShopCount(shopCount => shopCount + 1);
+                    Alert.alert("Added shop " + event.nativeEvent.text + " to the app.");
+                }}
+                style={styles.input}
+            />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 0,
-    borderWidth: 1,
-    padding: 0,
-    textAlign: 'center',
-  },
+    input: {
+        height: 40,
+        margin: 0,
+        borderWidth: 1,
+        padding: 0,
+        textAlign: 'center',
+    },
 });
