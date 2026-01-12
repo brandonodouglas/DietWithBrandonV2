@@ -4,13 +4,8 @@ import React, { useState } from "react";
 import { FlatList } from "react-native";
 
 // Component to render individual item
-
-
 type ItemProps = { name: string }
-
 // Component to render items
-
-
 const Item = ({ name }: ItemProps) => {
     return (
         <View style={styles.item}>
@@ -48,75 +43,49 @@ export default function ShopInput() {
             name: 'Uganda',
         },
     ]);
+
     // The actual shop that gets added to the shop array
     const [shop, setShop] = useState({ id: '', name: 'lol' });
     // Counts the numhber of shosp as of when the user inputs a shop
     const [shopCount, setShopCount] = useState(0);
-
-
-
     const handleSubmit = () => {
         return (Alert.alert("hety"));
-
     }
-
-
-
     if (shopCount == 0) {
         return (
             <View>
                 <Text className="text-center p-2">You currently have {shopCount} shops added into the app.</Text>
                 <Text className="text-center p-2">Why not add some shops below? 🛒</Text>
-
                 <TextInput
-
                     placeholder="Enter shop here"
                     onSubmitEditing={event => {
-
-
                         setShopCount(shopCount => shopCount + 1);
-                        setShopArray([...shopArray, { id: {shopCount}.toString(), name: event.nativeEvent.text }]);
-
-
+                        setShopArray([...shopArray, { id: { shopCount }.toString(), name: event.nativeEvent.text }]);
                     }}
                     style={styles.input}
-
                 />
-
             </View>
-
         );
-
-
     }
     return (
         <View>
-
             <Text className="text-center p-2">You currently have {shopCount} shops added into the app.</Text>
             <TextInput
                 placeholder="Enter shop here"
                 onSubmitEditing={event => {
-
                     setShopCount(shopCount => shopCount + 1);
-                    setShopArray([...shopArray, { id: {shopCount}.toString(), name: event.nativeEvent.text }]);
-
-
+                    setShopArray([...shopArray, { id: { shopCount }.toString(), name: event.nativeEvent.text }]);
                     Alert.alert("Added shop " + shop + " to the app.");
                 }}
                 style={styles.input}
-
             />
-
             <FlatList
                 data={shopArray}
                 renderItem={({ item }) => <Item name={item.name} />}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item, index) => String(index)}
+
             />
-
-
-
         </View>
-
     );
 }
 
