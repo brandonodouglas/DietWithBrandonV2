@@ -14,15 +14,14 @@ const Item = ({ name }: ItemProps) => {
     );
 }
 
-
 // This is the component that the user enters their shops into
 export default function ShopInput() {
     const [shopArray, setShopArray] = useState([
         {
-    
-        id:'0', name:"Tap the shops below to begin adding food. Use the pen button to edit, and the delete button to delete a shop.",
+
+            id: '0', name: "Tap the shops below to begin adding food. Use the pen button to edit, and the delete button to delete a shop.",
         },
-        
+
     ]);
 
     // The actual shop that gets added to the shop array
