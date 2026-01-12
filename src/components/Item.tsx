@@ -17,12 +17,12 @@ type ItemProps = {
 
 // Component
 export function Item(props: ItemProps) {
-    return ( <View style={{alignItems: 'center'}}>
-      <Text>{props.name}</Text>
-      <Text>{props.name} costs {props.price}.</Text>
-      <Text>{props.name} quantity: {props.quantity}</Text>
-      <Text>You bought {props.name} on {props.date}</Text>
-      <Text>Additional notes and comments: {props.comments}</Text>
-          </View>);
+    return (<View style={{ alignItems: 'center' }}>
+        <Text>{props.name}</Text>
+        <Text>{props.name} costs {props.price}.</Text>
+        <Text>{props.name} quantity: {props.quantity}</Text>
+        <Text>You bought {props.name} on {props.date}</Text>
+        <Text>Additional notes and comments: {props.comments}</Text>
+    </View>);
 };
 

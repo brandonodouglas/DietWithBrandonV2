@@ -2,6 +2,7 @@ import { TextInput, View, StyleSheet, Alert, Text, Button } from "react-native";
 import { AppText } from "@/components/AppText";
 import React, { useState } from "react";
 import { FlatList } from "react-native";
+import { ShopComponent } from "@/components/ShopComponent";
 
 // Component to render individual item
 type ItemProps = { name: string }
@@ -10,6 +11,7 @@ const Item = ({ name }: ItemProps) => {
     return (
         <View style={styles.item}>
             <Text style={{ color: 'white' }}>{name}</Text>
+            <Button title={"CLICK ME"} />
         </View>
     );
 }
@@ -18,7 +20,6 @@ const Item = ({ name }: ItemProps) => {
 export default function ShopInput() {
     const [shopArray, setShopArray] = useState([
         {
-
             id: '0', name: "Tap the shops below to begin adding food. Use the pen button to edit, and the delete button to delete a shop.",
         },
 
@@ -65,7 +66,9 @@ export default function ShopInput() {
                 renderItem={({ item }) => <Item name={item.name} />}
                 keyExtractor={(item, index) => String(index)}
 
-            />
+            /> 
+            {/* Shop component used to reperesent each shop in the shoplist */}
+            <ShopComponent shopName={"Ashe's"} />
         </View>
     );
 }
