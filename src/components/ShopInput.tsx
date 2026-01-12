@@ -75,8 +75,7 @@ export default function ShopInput() {
 
 
                         setShopCount(shopCount => shopCount + 1);
-                        setShopArray([...shopArray, { id: '7', name: event.nativeEvent.text }]);
-                        console.log(shopArray);
+                        setShopArray([...shopArray, { id: {shopCount}.toString(), name: event.nativeEvent.text }]);
 
 
                     }}
@@ -97,13 +96,10 @@ export default function ShopInput() {
             <TextInput
                 placeholder="Enter shop here"
                 onSubmitEditing={event => {
-                    setShop({ id: (shopArray.length++).toString(), name: event.nativeEvent.text });
 
                     setShopCount(shopCount => shopCount + 1);
-                    setShopArray((shopArray) => [...shopArray, shop]);
-                    shopArray.forEach(function (entry) {
-                        console.log(entry);
-                    });
+                    setShopArray([...shopArray, { id: {shopCount}.toString(), name: event.nativeEvent.text }]);
+
 
                     Alert.alert("Added shop " + shop + " to the app.");
                 }}
