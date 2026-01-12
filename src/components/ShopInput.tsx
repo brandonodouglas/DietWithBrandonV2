@@ -19,29 +19,10 @@ const Item = ({ name }: ItemProps) => {
 export default function ShopInput() {
     const [shopArray, setShopArray] = useState([
         {
-            id: '1',
-            name: 'India',
+    
+        id:'0', name:"Tap the shops below to begin adding food. Use the pen button to edit, and the delete button to delete a shop.",
         },
-        {
-            id: '2',
-            name: 'USA',
-        },
-        {
-            id: '3',
-            name: 'UK',
-        },
-        {
-            id: '4',
-            name: 'China',
-        },
-        {
-            id: '5',
-            name: 'Nigeria',
-        },
-        {
-            id: '6',
-            name: 'Uganda',
-        },
+        
     ]);
 
     // The actual shop that gets added to the shop array
@@ -54,10 +35,12 @@ export default function ShopInput() {
     if (shopCount == 0) {
         return (
             <View>
+                <Text className="text-center m-3 p-3 backgroundColor">D I E T W I T H B R A N D O N</Text>
+                <Text className="text-center">Change your diet, change your life. ✅</Text>
                 <Text className="text-center p-2">You currently have {shopCount} shops added into the app.</Text>
                 <Text className="text-center p-2">Why not add some shops below? 🛒</Text>
                 <TextInput
-                    placeholder="Enter shop here"
+                    placeholder="Enter new shop here"
                     onSubmitEditing={event => {
                         setShopCount(shopCount => shopCount + 1);
                         setShopArray([...shopArray, { id: { shopCount }.toString(), name: event.nativeEvent.text }]);
@@ -71,11 +54,10 @@ export default function ShopInput() {
         <View>
             <Text className="text-center p-2">You currently have {shopCount} shops added into the app.</Text>
             <TextInput
-                placeholder="Enter shop here"
+                placeholder="Enter new shop here"
                 onSubmitEditing={event => {
                     setShopCount(shopCount => shopCount + 1);
                     setShopArray([...shopArray, { id: { shopCount }.toString(), name: event.nativeEvent.text }]);
-                    Alert.alert("Added shop " + shop + " to the app.");
                 }}
                 style={styles.input}
             />
@@ -98,7 +80,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     item: {
-        backgroundColor: 'red',
+        backgroundColor: '#4287f5',
         padding: 10,
         marginVertical: 8,
         marginHorizontal: 16,
